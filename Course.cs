@@ -10,34 +10,35 @@ namespace LMS.Models
     public class Course
     {
 
-        [Key]
-        [Display(Name = "CourseId")]
-        public int CourseId { get; set; }
+       [Display(Name = "Id")]
+public int Id { get; set; }
        
        
 
-        [Display(Name = "CourseName")]
-        [Column(TypeName = "Varchar(100)")]
-        public string CourseName { get; set; }
+[Display(Name = "CourseName")]
 
-        [Display(Name = "Description")]
-        [Column(TypeName = "Varchar(500)")]
-        public string Description { get; set; }
+public string CourseName { get; set; }
 
-        [Display(Name = "InstructorId")]
-        [Column(TypeName = "Varchar(20)")]
-        public int InstructorId { get; set; }
+[Display(Name = "Description")]
 
-       [ForeignKey("InstructorId")]
+public string Description { get; set; }
+
+[Display(Name = "InstructorId")]
+
+public int InstructorId { get; set; }
 
 
-        [Display(Name = "Instructor")]
-        [Column(TypeName = "Varchar(20)")]
-        public Student Instructor { get; set; }
-        [ForeignKey("InstructorId")]
+[Display(Name = "InstructorName")]
 
-        public ICollection<Enrollment> Enrollments { get; set; }
-            
+public Student InstructorName { get; set; }
+       
+
+
+
+
+
+public ICollection<Enrollment> Enrollments { get; set; }
+public ICollection<Video> Video { get; set; }
         
     }
 }
